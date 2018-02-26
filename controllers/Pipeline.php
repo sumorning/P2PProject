@@ -39,11 +39,7 @@ class Pipeline extends CI_Controller
             array_push($resultObj, $tempObj);
         }
         echo json_encode($resultObj, JSON_UNESCAPED_UNICODE);
-        /*d
-    $this->load->view('head');
-    $this->load->view('returnData', array('iName' => $data));
-    $this->load->view('footer');
-     */
+        return $resultObj;
     }
     public function getNameByInRate($InRate)
     {

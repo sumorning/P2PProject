@@ -17,7 +17,6 @@ class Pipeline extends CI_Controller
         $data = $this->invest_Model->getiName();
         $resultObj = array();
         foreach ($data as $entry) {
-
             $tempObj = array(
                 'iId' => $entry->iId,
                 'pId' => $entry->pId,
@@ -53,7 +52,6 @@ class Pipeline extends CI_Controller
     }
     public function DBTest()
     {
-        //s
         $this->load->database();
     }
 }

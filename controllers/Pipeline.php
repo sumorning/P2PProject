@@ -6,7 +6,7 @@ class Pipeline extends CI_Controller
 {
     public function index()
     {
-        echo 'hi';
+        echo 'hidd';
     }
 
     public function getName()
@@ -55,7 +55,8 @@ class Pipeline extends CI_Controller
         $this->load->view('returnData', array('iName' => $data));
         $this->load->view('footer');
     }
-    public function jsonTest()
+    public function DBTest()
     {
+        $this->load->database();
     }
 }

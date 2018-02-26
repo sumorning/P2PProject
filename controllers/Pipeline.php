@@ -24,7 +24,6 @@ class Pipeline extends CI_Controller
                 'cId' => $entry->cId,
                 'inRate' => $entry->inRate,
                 'period' => $entry->period,
-                'pId' => $entry->pId,
                 'curFund' => $entry->curFund,
                 'totFund' => $entry->totFund,
                 'prRate' => $entry->prRate,

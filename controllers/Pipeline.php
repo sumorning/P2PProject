@@ -53,6 +53,7 @@ class Pipeline extends CI_Controller
     }
     public function DBTest()
     {
+        //s
         $this->load->database();
     }
 }

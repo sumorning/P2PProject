@@ -23,11 +23,11 @@ class Pipeline extends CI_Controller
             $tempObj = array(
                 'iId' => $entry->iId,
                 'pId' => $entry->pId,
+                // need pId -> pName !!!
                 'iName' => $entry->iName,
                 'cName' => $cateName,
                 'inRate' => $entry->inRate,
                 'period' => $entry->period,
-                'pId' => $entry->pId,
                 'curFund' => $entry->curFund,
                 'totFund' => $entry->totFund,
                 'prRate' => $entry->prRate,

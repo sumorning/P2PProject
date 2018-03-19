@@ -11,15 +11,18 @@ class Invest_Model extends CI_Model
     {
         parent::__construct();
     }
-    public function getiName()
+    public function getInvestInf()
     {
         return $this->db->query('SELECT * from invest order by open desc')->result();
+    }
+    public function getInvestByMore($Limit)
+    {
+        //select * from invest  LIMIT
+        return $this->db->query('SELECT * from invest order by open desc LIMIT ' . $Limit)->result();
     }
     public function getCateNamebyId($Id)
     {
         return $this->db->query('SELECT categoryName from category where categoryId=' . $Id)->row()->categoryName;
-
-//        return $this->db->qurey('SELECT * from category where categoryId>' . $Id)->result();
     }
     public function getStatNamebyId($Id)
     {

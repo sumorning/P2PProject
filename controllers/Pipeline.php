@@ -44,19 +44,21 @@ class Pipeline extends CI_Controller
     }
     public function DBTest()
     {
-        $Limit = 0;
-        if (!isset($_POST['more'])) {
-            $More = false;
-            $Limit = 0;
+        if (!isset($_POST['start'])) {
+            $Start = false;
         } else {
-            $More = $_POST['more'];
-            $Limit += 20;
+            $Start = $_POST['start'];
+        }
+        if (!isset($_POST['num'])) {
+            $Num = false;
+        } else {
+            $Num = $_POST['num'];
         }
 
         header('Content-Type: application/json');
         $this->load->database();
         $this->load->model('invest_Model');
-        $data = $this->invest_Model->getInvestByMore($Limit);
+        $data = $this->invest_Model->getInvestByRange($Start, $Num);
 
         $resultObj = array();
         foreach ($data as $entry) {
@@ -81,6 +83,7 @@ class Pipeline extends CI_Controller
             );
             array_push($resultObj, $tempObj);
         }
+
         echo json_encode($resultObj, JSON_UNESCAPED_UNICODE);
         return $resultObj;
     }

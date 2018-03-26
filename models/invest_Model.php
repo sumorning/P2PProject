@@ -15,14 +15,16 @@ class Invest_Model extends CI_Model
     {
         return $this->db->query('SELECT * from invest order by open desc')->result();
     }
-    public function getInvestByMore($Limit)
+    public function getInvestByRange($Start, $Num)
     {
-        //select * from invest  LIMIT
-        return $this->db->query('SELECT * from invest order by open desc LIMIT ' . $Limit)->result();
+        $Query = 'SELECT * from invest order by open desc Limit ' . $Start . ',' . $Num;
+        return $this->db->query($Query)->result();
     }
     public function getCateNamebyId($Id)
     {
         return $this->db->query('SELECT categoryName from category where categoryId=' . $Id)->row()->categoryName;
+
+//        return $this->db->qurey('SELECT * from category where categoryId>' . $Id)->result();
     }
     public function getStatNamebyId($Id)
     {

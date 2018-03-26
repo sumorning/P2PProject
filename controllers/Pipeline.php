@@ -82,8 +82,7 @@ class Pipeline extends CI_Controller
                 'updated' => $entry->updated,
             );
             array_push($resultObj, $tempObj);
-        }
-
+        } //
         echo json_encode($resultObj, JSON_UNESCAPED_UNICODE);
         return $resultObj;
     }

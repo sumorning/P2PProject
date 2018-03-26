@@ -44,15 +44,15 @@ class Pipeline extends CI_Controller
     }
     public function DBTest()
     {
-        if (!isset($_POST['start'])) {
+        if (!isset($_GET['start'])) {
             $Start = false;
         } else {
-            $Start = $_POST['start'];
+            $Start = $_GET['start'];
         }
-        if (!isset($_POST['num'])) {
+        if (!isset($_GET['num'])) {
             $Num = false;
         } else {
-            $Num = $_POST['num'];
+            $Num = $_GET['num'];
         }
 
         header('Content-Type: application/json');

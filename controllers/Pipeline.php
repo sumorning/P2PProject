@@ -42,19 +42,20 @@ class Pipeline extends CI_Controller
         echo json_encode($resultObj, JSON_UNESCAPED_UNICODE);
         return $resultObj;
     }
-    public function DBTest()
+    public function DBTest($Start, $Num)
     {
+        /*
         if (!isset($_GET['start'])) {
-            $Start = false;
+        $Start = false;
         } else {
-            $Start = $_GET['start'];
+        $Start = $_GET['start'];
         }
         if (!isset($_GET['num'])) {
-            $Num = false;
+        $Num = false;
         } else {
-            $Num = $_GET['num'];
+        $Num = $_GET['num'];
         }
-
+         */
         header('Content-Type: application/json');
         $this->load->database();
         $this->load->model('invest_Model');

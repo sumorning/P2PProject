@@ -20,14 +20,17 @@ class Invest_Model extends CI_Model
         $Query = 'SELECT * from invest order by open desc Limit ' . $Start . ',' . $Num;
         return $this->db->query($Query)->result();
     }
-    public function getCateNamebyId($Id)
+    public function getPNameByPId($PId)
     {
-        return $this->db->query('SELECT categoryName from category where categoryId=' . $Id)->row()->categoryName;
-
-//        return $this->db->qurey('SELECT * from category where categoryId>' . $Id)->result();
+        $Query = 'SELECT pName from platform where pid =' . $PId;
+        return $this->db->query($Query)->row()->pName;
     }
-    public function getStatNamebyId($Id)
+    public function getCateNamebyId($cId)
     {
-        return $this->db->query('SELECT stateName from state where stateId=' . $Id)->row()->stateName;
+        return $this->db->query('SELECT categoryName from category where categoryId=' . $cId)->row()->categoryName;
+    }
+    public function getStatNamebyId($sId)
+    {
+        return $this->db->query('SELECT stateName from state where stateId=' . $sId)->row()->stateName;
     }
 }

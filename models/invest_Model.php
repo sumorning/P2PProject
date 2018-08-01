@@ -34,13 +34,13 @@ class Invest_Model extends CI_Model
 //
     public function getInvestByInRate($UpperLimit, $LowerLimit, $Start, $Num)
     {
-        $Query = 'SELECT * from invest where InRate >=' . $LowerLimit . ' and ' . $UpperLimit . '<= InRate order by open desc Limit ' . $Start . ',' . $Num;
+        $Query = 'SELECT * from invest where InRate >=' . $LowerLimit . ' and ' . $UpperLimit . '>= InRate order by open desc Limit ' . $Start . ',' . $Num;
         return $this->db->query($Query)->result();
     }
 //
     public function getInvestByTotFund($UpperLimit, $LowerLimit, $Start, $Num)
     {
-        $Query = 'SELECT * from invest where totFund >=' . $LowerLimit . ' and ' . $UpperLimit . '<= InRate order by open desc Limit ' . $Start . ',' . $Num;
+        $Query = 'SELECT * from invest where totFund >=' . $LowerLimit . ' and ' . $UpperLimit . '>= InRate order by open desc Limit ' . $Start . ',' . $Num;
         return $this->db->query($Query)->result();
     }
 

@@ -31,7 +31,7 @@ class Invest_Model extends CI_Model
         $Query = 'SELECT * from Invest where pid =' . $PId . ' order by open desc Limit ' . $Start . ',' . $Num;
         return $this->db->query($Query)->result();
     }
-
+//
     public function getInvestByInRate($UpperLimit, $LowerLimit, $Start, $Num)
     {
         $Query = 'SELECT * from Invest where InRate >=' . $LowerLimit . ' and ' . $UpperLimit . '<= InRate order by open desc Limit ' . $Start . ',' . $Num;

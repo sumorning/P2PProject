@@ -13,9 +13,9 @@ class Pipeline extends CI_Controller
     {
         $resultObj = array();
         foreach ($data as $entry) {
-            $cateName = $this->invest_Model->getCateNamebyId($entry->cId);
-            $statName = $this->invest_Model->getStatNamebyId($entry->sId);
-            $pName = $this->invest_Model->getPNameByPId($entry->pId);
+            $cateName = $this->Invest_Model->getCateNamebyId($entry->cId);
+            $statName = $this->Invest_Model->getStatNamebyId($entry->sId);
+            $pName = $this->Invest_Model->getPNameByPId($entry->pId);
             $tempObj = array(
                 'iId' => $entry->iId,
                 'pName' => $pName,
@@ -41,8 +41,8 @@ class Pipeline extends CI_Controller
     {
         header('Content-Type: application/json');
         $this->load->database();
-        $this->load->model('invest_Model');
-        $data = $this->invest_Model->getInvestInf();
+        $this->load->model('Invest_Model');
+        $data = $this->Invest_Model->getInvestInf();
         $resultObj = $this->makeRetData($data);
         echo json_encode($resultObj, JSON_UNESCAPED_UNICODE);
         return $resultObj;
@@ -52,8 +52,8 @@ class Pipeline extends CI_Controller
     {
         header('Content-Type: application/json');
         $this->load->database();
-        $this->load->model('invest_Model');
-        $data = $this->invest_Model->getInvestByRange($Start, $Num);
+        $this->load->model('Invest_Model');
+        $data = $this->Invest_Model->getInvestByRange($Start, $Num);
         $resultObj = $this->makeRetData($data);
         echo json_encode($resultObj, JSON_UNESCAPED_UNICODE + JSON_PRETTY_PRINT + JSON_UNESCAPED_SLASHES);
         return $resultObj;
@@ -62,8 +62,8 @@ class Pipeline extends CI_Controller
     {
         header('Content-Type: application/json');
         $this->load->database();
-        $this->load->model('invest_Model');
-        $data = $this->invest_Model->getInvestByCId($CId, $Start, $Num);
+        $this->load->model('Invest_Model');
+        $data = $this->Invest_Model->getInvestByCId($CId, $Start, $Num);
         $resultObj = $this->makeRetData($data);
         echo json_encode($resultObj, JSON_UNESCAPED_UNICODE + JSON_PRETTY_PRINT + JSON_UNESCAPED_SLASHES);
         return $resultObj;
@@ -73,8 +73,8 @@ class Pipeline extends CI_Controller
     {
         header('Content-Type: application/json');
         $this->load->database();
-        $this->load->model('invest_Model');
-        $data = $this->invest_Model->getInvestByPId($PId, $Start, $Num);
+        $this->load->model('Invest_Model');
+        $data = $this->Invest_Model->getInvestByPId($PId, $Start, $Num);
         $resultObj = $this->makeRetData($data);
         echo json_encode($resultObj, JSON_UNESCAPED_UNICODE + JSON_PRETTY_PRINT + JSON_UNESCAPED_SLASHES);
         return $resultObj;
@@ -84,8 +84,8 @@ class Pipeline extends CI_Controller
     {
         header('Content-Type: application/json');
         $this->load->database();
-        $this->load->model('invest_Model');
-        $data = $this->invest_Model->getInvestByInRate($UpperLimit, $LowerLimit, $Start, $Num);
+        $this->load->model('Invest_Model');
+        $data = $this->Invest_Model->getInvestByInRate($UpperLimit, $LowerLimit, $Start, $Num);
         $resultObj = $this->makeRetData($data);
         echo json_encode($resultObj, JSON_UNESCAPED_UNICODE + JSON_PRETTY_PRINT + JSON_UNESCAPED_SLASHES);
         return $resultObj;
@@ -95,8 +95,8 @@ class Pipeline extends CI_Controller
     {
         header('Content-Type: application/json');
         $this->load->database();
-        $this->load->model('invest_Model');
-        $data = $this->invest_Model->getInvestByTotFund($UpperLimit, $LowerLimit, $Start, $Num);
+        $this->load->model('Invest_Model');
+        $data = $this->Invest_Model->getInvestByTotFund($UpperLimit, $LowerLimit, $Start, $Num);
         $resultObj = $this->makeRetData($data);
         echo json_encode($resultObj, JSON_UNESCAPED_UNICODE + JSON_PRETTY_PRINT + JSON_UNESCAPED_SLASHES);
         return $resultObj;
@@ -106,8 +106,8 @@ class Pipeline extends CI_Controller
     {
         header('Content-Type: application/json');
         $this->load->database();
-        $this->load->model('invest_Model');
-        $data = $this->invest_Model->getInvestBySId($SId, $Start, $Num);
+        $this->load->model('Invest_Model');
+        $data = $this->Invest_Model->getInvestBySId($SId, $Start, $Num);
         $resultObj = $this->makeRetData($data);
         echo json_encode($resultObj, JSON_UNESCAPED_UNICODE + JSON_PRETTY_PRINT + JSON_UNESCAPED_SLASHES);
         return $resultObj;
@@ -117,8 +117,8 @@ class Pipeline extends CI_Controller
     {
         header('Content-Type: application/json');
         $this->load->database();
-        $this->load->model('invest_Model');
-        $data = $this->invest_Model->getInvestByPeriod($UpperLimit, $LowerLimit, $Start, $Num);
+        $this->load->model('Invest_Model');
+        $data = $this->Invest_Model->getInvestByPeriod($UpperLimit, $LowerLimit, $Start, $Num);
         $resultObj = $this->makeRetData($data);
         echo json_encode($resultObj, JSON_UNESCAPED_UNICODE + JSON_PRETTY_PRINT + JSON_UNESCAPED_SLASHES);
         return $resultObj;
@@ -128,9 +128,9 @@ class Pipeline extends CI_Controller
     {
         header('Content-Type: application/json');
         $this->load->database();
-        $this->load->model('invest_Model');
+        $this->load->model('Invest_Model');
 
-        $data = $this->invest_Model->getInvestByIName(urldecode($SearchName), $Start, $Num);
+        $data = $this->Invest_Model->getInvestByIName(urldecode($SearchName), $Start, $Num);
         $resultObj = $this->makeRetData($data);
         echo json_encode($resultObj, JSON_UNESCAPED_UNICODE + JSON_PRETTY_PRINT + JSON_UNESCAPED_SLASHES);
         return $resultObj;
